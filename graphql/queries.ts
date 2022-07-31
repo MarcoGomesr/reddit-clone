@@ -11,6 +11,15 @@ export const GET_ALL_VOTES_BY_POST_ID = gql`
     }
   }
 `
+export const GET_SUBREDDITS_WITH_LIMIT = gql`
+  query MyQuery($limit: Int!) {
+    getSubredditListLimit(limit: $limit) {
+      created_at
+      id
+      topic
+    }
+  }
+`
 
 //get all post
 export const GET_ALL_POST_BY_ID = gql`

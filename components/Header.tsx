@@ -18,12 +18,14 @@ function Header() {
   return (
     <div className="sticky top-0 flex bg-white px-4 py-2 shadow-sm">
       <div className="relative h1-10 w-20 flex-shrink-0 cursor-pointer">
-        <Image
-          objectFit="contain"
-          src={'http://links.papareact.com/fqy'}
-          layout="fill"
-          priority
-        />
+        <Link href={'/'}>
+          <Image
+            objectFit="contain"
+            src={'http://links.papareact.com/fqy'}
+            layout="fill"
+            priority
+          />
+        </Link>
       </div>
 
       <div className="flex items-center mx-7 xl:min-w-[300px]">
