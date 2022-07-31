@@ -1,28 +1,30 @@
-import React from 'react'
 import { useSession } from 'next-auth/react'
 import Image from 'next/image'
+import { type } from 'os'
+import React from 'react'
 
 type Props = {
   seed?: string
   large?: boolean
 }
-
-function Avatar({ seed, large }: Props) {
+export default function Avatar({ seed, large }: Props) {
   const { data: session } = useSession()
+  // console.log(large);
+
   return (
     <div
-      className={`relative h-10 rounded-full border-gray-300 bg-white ${
-        large && 'h-20 w-20'
+      className={`relative bg-white border-gray-300 rounded-full overflow-hidden ${
+        large ? 'h-20 w-20' : 'h-10 w-10'
       }`}
     >
       <Image
         layout="fill"
+        className="object-contain"
         src={`https://avatars.dicebear.com/api/open-peeps/${
-          session?.user?.name || 'placeholder'
+          seed || session?.user?.name || 'placeholder'
         }.svg`}
+        alt="avatar"
       />
     </div>
   )
 }
-
-export default Avatar

@@ -11,6 +11,7 @@ import {
 } from '@heroicons/react/solid'
 import { ChatIcon, BellIcon, PlusIcon } from '@heroicons/react/outline'
 import { signIn, signOut, useSession } from 'next-auth/react'
+import Link from 'next/link'
 
 function Header() {
   const { data: session } = useSession()
